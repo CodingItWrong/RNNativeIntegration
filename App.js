@@ -41,7 +41,10 @@ export default class App extends Component {
           style={{ height: 50 }}
           onPress={() => this.tryTheBridge()}
         />
-        <MapView style={{ flex: 1 }} />
+        <MapView
+          style={{ flex: 1 }}
+          zoomEnabled={false}
+        />
       </View>
     );
   }
