@@ -1,0 +1,3 @@
+rootProject.name = 'RNNativeIntegration'
+
+include ':app'
