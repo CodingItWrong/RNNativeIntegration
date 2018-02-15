@@ -33,6 +33,12 @@ export default class App extends Component {
   }
 
   render() {
+    const region = {
+      latitude: 37.48,
+      longitude: -122.16,
+      latitudeDelta: 0.1,
+      longitudeDelta: 0.1,
+    };
     return (
       <View style={{ flex: 1 }}>
         <Text style={{ height: 50, paddingTop: 20 }}>Map:</Text>
@@ -43,6 +49,7 @@ export default class App extends Component {
         />
         <MapView
           style={{ flex: 1 }}
+          region={region}
           zoomEnabled={false}
         />
       </View>
