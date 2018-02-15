@@ -6,11 +6,14 @@
 
 import React, { Component } from 'react';
 import {
+  Button,
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import {NativeModules} from 'react-native';
+var CalendarManager = NativeModules.CalendarManager;
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,8 +22,15 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  tryTheBridge() {
+    CalendarManager.addEvent(
+      "Valentine's Day Dinner",
+      'Secret Location',
+      Date.now(),
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -33,6 +43,10 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Button
+          title="Try the bridge!"
+          onPress={() => this.tryTheBridge()}
+        />
       </View>
     );
   }
