@@ -12,6 +12,7 @@ import {
   Text,
   View
 } from 'react-native';
+import MapView from './MapView';
 import {NativeModules} from 'react-native';
 var CalendarManager = NativeModules.CalendarManager;
 
@@ -33,20 +34,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+      <View style={{ flex: 1 }}>
+        <Text style={{ height: 50, paddingTop: 20 }}>Map:</Text>
         <Button
           title="Try the bridge!"
+          style={{ height: 50 }}
           onPress={() => this.tryTheBridge()}
         />
+        <MapView style={{ flex: 1 }} />
       </View>
     );
   }
