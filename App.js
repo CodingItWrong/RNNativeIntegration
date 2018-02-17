@@ -25,11 +25,10 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   tryTheBridge() {
-    CalendarManager.addEvent(
-      "Valentine's Day Dinner",
-      'Secret Location',
-      Date.now(),
-    );
+    CalendarManager.addEvent("Valentine's Day Dinner", {
+      location: 'Secret Location',
+      time: Date.now(),
+    });
   }
 
   render() {

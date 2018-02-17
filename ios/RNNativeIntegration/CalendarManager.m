@@ -8,14 +8,18 @@
 
 #import "CalendarManager.h"
 #import <React/RCTLog.h>
+#import <React/RCTConvert.h>
 
 @implementation CalendarManager
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(NSDate *)date)
+RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
 {
-  RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+  NSString *location = [RCTConvert NSString:details[@"location"]];
+  NSDate *time = [RCTConvert NSDate:details[@"time"]];
+  
+  RCTLogInfo(@"Pretending to create an event %@ at %@ at %@", name, location, time);
 }
 
 @end
