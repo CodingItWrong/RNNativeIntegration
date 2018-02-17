@@ -40,6 +40,10 @@ export default class App extends Component {
     }
   }
 
+  onRegionChange(event) {
+    console.log(event);
+  }
+
   render() {
     const region = {
       latitude: 37.48,
@@ -59,6 +63,7 @@ export default class App extends Component {
           style={{ flex: 1 }}
           region={region}
           zoomEnabled={false}
+          onRegionChange={e => this.onRegionChange(e)}
         />
       </View>
     );
