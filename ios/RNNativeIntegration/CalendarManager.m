@@ -9,6 +9,7 @@
 #import "CalendarManager.h"
 #import <React/RCTLog.h>
 #import <React/RCTConvert.h>
+#import <React/RCTUtils.h>
 
 @implementation CalendarManager
 
@@ -22,11 +23,18 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
   RCTLogInfo(@"Pretending to create an event %@ at %@ at %@", name, location, time);
 }
 
-RCT_EXPORT_METHOD(findEvents:(RCTResponseSenderBlock)callback)
+RCT_REMAP_METHOD(findEvents,
+                 findEventsWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
 {
   NSArray *events = @[@"foo", @"bar", @"baz"];
-  NSNull *noError = [NSNull null];
-  callback(@[noError, events]);
+//  NSArray *events = NULL;
+  if (events) {
+    resolve(events);
+  } else {
+    NSError *error = [NSError errorWithDomain:@"something" code:-42 userInfo:NULL];
+    reject(@"no_events", @"There were no events", error);
+  }
 }
 
 @end

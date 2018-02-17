@@ -24,19 +24,18 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
-  tryTheBridge() {
+  async tryTheBridge() {
     CalendarManager.addEvent("Valentine's Day Dinner", {
       location: 'Secret Location',
       time: Date.now(),
     });
 
-    CalendarManager.findEvents((error, events) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log(events);
-      }
-    });
+    try {
+      let events = await CalendarManager.findEvents();
+      console.log(events);
+    } catch(error) {
+      console.log(error);
+    }
   }
 
   render() {
