@@ -13,6 +13,11 @@
 
 @implementation CalendarManager
 
+- (NSDictionary *)constantsToExport
+{
+  return @{ @"firstDayOfTheWeek": @"Monday" };
+}
+
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)

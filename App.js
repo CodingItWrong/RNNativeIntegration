@@ -25,6 +25,8 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   async tryTheBridge() {
+    console.log(CalendarManager.firstDayOfTheWeek);
+
     CalendarManager.addEvent("Valentine's Day Dinner", {
       location: 'Secret Location',
       time: Date.now(),
