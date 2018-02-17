@@ -22,4 +22,11 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
   RCTLogInfo(@"Pretending to create an event %@ at %@ at %@", name, location, time);
 }
 
+RCT_EXPORT_METHOD(findEvents:(RCTResponseSenderBlock)callback)
+{
+  NSArray *events = @[@"foo", @"bar", @"baz"];
+  NSNull *noError = [NSNull null];
+  callback(@[noError, events]);
+}
+
 @end

@@ -29,6 +29,14 @@ export default class App extends Component {
       location: 'Secret Location',
       time: Date.now(),
     });
+
+    CalendarManager.findEvents((error, events) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(events);
+      }
+    });
   }
 
   render() {
