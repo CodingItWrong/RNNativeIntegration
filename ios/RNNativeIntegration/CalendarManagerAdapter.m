@@ -1,24 +1,24 @@
 //
-//  CalendarManager.m
+//  CalendarManagerAdapter.m
 //  RNNativeIntegration
 //
 //  Created by Josh Justice on 2/15/18.
 //  Copyright © 2018 Facebook. All rights reserved.
 //
 
-#import "CalendarManager.h"
+#import "CalendarManagerAdapter.h"
 #import <React/RCTLog.h>
 #import <React/RCTConvert.h>
 #import <React/RCTUtils.h>
 
-@implementation CalendarManager
+@implementation CalendarManagerAdapter
 
 - (NSDictionary *)constantsToExport
 {
   return @{ @"firstDayOfTheWeek": @"Monday" };
 }
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(CalendarManager);
 
 RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
 {

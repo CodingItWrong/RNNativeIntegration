@@ -1,5 +1,5 @@
 //
-//  CalendarManager.h
+//  CalendarManagerAdapter
 //  RNNativeIntegration
 //
 //  Created by Josh Justice on 2/15/18.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-@interface CalendarManager : NSObject <RCTBridgeModule>
+@interface CalendarManagerAdapter : NSObject <RCTBridgeModule>
 
 @end
