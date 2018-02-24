@@ -8,10 +8,25 @@
 
 import Foundation
 
+enum CalendarError: Error {
+  case noEvents
+}
+
 class CalendarManager: NSObject {
   static let firstDayOfTheWeek = "Monday"
   
   func addEvent(name: String, location: String?, time: NSDate?) {
     Logger.info("Pretending to create an event \(name) at \(String(describing: location)) at \(String(describing: time))");
+  }
+  
+  func findEvents() throws -> [String] {
+    let events: [String]? = ["foo", "bar", "baz"]
+    // let events: [String]? = nil
+    
+    if let events = events {
+      return events
+    } else {
+      throw CalendarError.noEvents
+    }
   }
 }
