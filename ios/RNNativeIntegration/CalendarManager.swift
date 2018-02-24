@@ -8,6 +8,29 @@
 
 import Foundation
 
+class Result: NSObject {
+}
+
+class SuccessResult: Result {
+  let value: Any
+  
+  init(value: Any) {
+    self.value = value
+  }
+}
+
+class FailureResult: Result {
+  let code: String
+  let message: String
+  let error: Error
+  
+  init(code: String, message: String, error: Error) {
+    self.code = code
+    self.message = message
+    self.error = error
+  }
+}
+
 class CalendarManager: NSObject {
   static let firstDayOfTheWeek = "Monday"
   
