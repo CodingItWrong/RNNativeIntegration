@@ -7,6 +7,7 @@
 //
 
 #import "CalendarManagerAdapter.h"
+#import "RNNativeIntegration-Swift.h"
 #import <React/RCTLog.h>
 #import <React/RCTConvert.h>
 #import <React/RCTUtils.h>
@@ -15,7 +16,7 @@
 
 - (NSDictionary *)constantsToExport
 {
-  return @{ @"firstDayOfTheWeek": @"Monday" };
+  return @{ @"firstDayOfTheWeek": CalendarManager.firstDayOfTheWeek };
 }
 
 RCT_EXPORT_MODULE(CalendarManager);
