@@ -10,4 +10,8 @@ import Foundation
 
 class CalendarManager: NSObject {
   static let firstDayOfTheWeek = "Monday"
+  
+  func addEvent(name: String, location: String?, time: NSDate?) {
+    RCTLogInfo("Pretending to create an event \(name) at \(String(describing: location)) at \(String(describing: time))");
+  }
 }
