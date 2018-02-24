@@ -14,6 +14,7 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* RNNativeIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNNativeIntegrationTests.m */; };
 		03364F4D2041833C00A88262 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03364F4C2041833C00A88262 /* CalendarManager.swift */; };
+		0352CDE32041851E006B0635 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0352CDE22041851E006B0635 /* Logger.m */; };
 		037E9995203634C700DC3F42 /* RCTConvert+Mapkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 037E9994203634C700DC3F42 /* RCTConvert+Mapkit.m */; };
 		03D8282B2038614400A4719A /* RNTMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8282A2038614400A4719A /* RNTMapView.m */; };
 		03D8E9A620362A71001E0673 /* CalendarManagerAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8E9A520362A71001E0673 /* CalendarManagerAdapter.m */; };
@@ -332,6 +333,8 @@
 		00E356F21AD99517003FC87E /* RNNativeIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNativeIntegrationTests.m; sourceTree = "<group>"; };
 		03364F4B2041833C00A88262 /* RNNativeIntegration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNNativeIntegration-Bridging-Header.h"; sourceTree = "<group>"; };
 		03364F4C2041833C00A88262 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = RNNativeIntegration/CalendarManager.swift; sourceTree = "<group>"; };
+		0352CDE12041851E006B0635 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = RNNativeIntegration/Logger.h; sourceTree = "<group>"; };
+		0352CDE22041851E006B0635 /* Logger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Logger.m; path = RNNativeIntegration/Logger.m; sourceTree = "<group>"; };
 		037E9993203634C700DC3F42 /* RCTConvert+Mapkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RCTConvert+Mapkit.h"; path = "RNNativeIntegration/RCTConvert+Mapkit.h"; sourceTree = "<group>"; };
 		037E9994203634C700DC3F42 /* RCTConvert+Mapkit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RCTConvert+Mapkit.m"; path = "RNNativeIntegration/RCTConvert+Mapkit.m"; sourceTree = "<group>"; };
 		03D828292038614400A4719A /* RNTMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNTMapView.h; path = RNNativeIntegration/RNTMapView.h; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 				03D828292038614400A4719A /* RNTMapView.h */,
 				03D8282A2038614400A4719A /* RNTMapView.m */,
 				03364F4B2041833C00A88262 /* RNNativeIntegration-Bridging-Header.h */,
+				0352CDE12041851E006B0635 /* Logger.h */,
+				0352CDE22041851E006B0635 /* Logger.m */,
 			);
 			name = RNNativeIntegration;
 			sourceTree = "<group>";
@@ -1143,6 +1148,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				03D8282B2038614400A4719A /* RNTMapView.m in Sources */,
+				0352CDE32041851E006B0635 /* Logger.m in Sources */,
 				03364F4D2041833C00A88262 /* CalendarManager.swift in Sources */,
 				03D8E9A620362A71001E0673 /* CalendarManagerAdapter.m in Sources */,
 				037E9995203634C700DC3F42 /* RCTConvert+Mapkit.m in Sources */,
