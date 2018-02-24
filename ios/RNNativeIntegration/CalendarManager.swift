@@ -9,5 +9,5 @@
 import Foundation
 
 class CalendarManager: NSObject {
-
+  static let firstDayOfTheWeek = "Monday"
 }
