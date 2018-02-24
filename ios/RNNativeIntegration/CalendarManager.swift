@@ -12,6 +12,25 @@ enum CalendarError: Error {
   case noEvents
 }
 
+class Result: NSObject {
+}
+
+class SuccessResult: Result {
+  let value: Any
+  
+  init(value: Any) {
+    self.value = value
+  }
+}
+
+class FailureResult: Result {
+  let error: Error
+  
+  init(error: Error) {
+    self.error = error
+  }
+}
+
 class CalendarManager: NSObject {
   static let firstDayOfTheWeek = "Monday"
   
