@@ -37,4 +37,16 @@ class CalendarManager: NSObject {
   func addEvent(_ name: String, location: String?, time: NSDate?) {
     Logger.info("Pretending to create an event \(name) at \(String(describing: location)) at \(String(describing: time))");
   }
+  
+  func findEvents() -> Result {
+    let events: [String]? = ["foo", "bar", "baz"]
+    // let events: [String]? = nil
+    
+    if let events = events {
+      return SuccessResult(value: events)
+    } else {
+      let error = NSError(domain:"something", code:-42, userInfo:nil);
+      return FailureResult(code: "no_events", message: "There were no events", error: error)
+    }
+  }
 }
