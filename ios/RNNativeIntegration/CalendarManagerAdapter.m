@@ -43,13 +43,14 @@ RCT_REMAP_METHOD(findEvents,
                  findEventsWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSArray *events = @[@"foo", @"bar", @"baz"];
-//  NSArray *events = NULL;
-  if (events) {
-    resolve(events);
+  Result *result = [_calendarManager findEvents];
+  
+  if ([result isMemberOfClass:[SuccessResult class]]) {
+    SuccessResult *successResult = (SuccessResult *)result;
+    resolve(successResult.value);
   } else {
-    NSError *error = [NSError errorWithDomain:@"something" code:-42 userInfo:NULL];
-    reject(@"no_events", @"There were no events", error);
+    FailureResult *failureResult = (FailureResult *)result;
+    reject(failureResult.code, failureResult.message, failureResult.error);
   }
 }
 
