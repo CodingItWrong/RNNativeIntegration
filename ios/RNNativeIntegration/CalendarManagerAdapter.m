@@ -8,15 +8,25 @@
 
 #import "CalendarManagerAdapter.h"
 #import "RNNativeIntegration-Swift.h"
-#import <React/RCTLog.h>
 #import <React/RCTConvert.h>
 #import <React/RCTUtils.h>
 
-@implementation CalendarManagerAdapter
+@implementation CalendarManagerAdapter {
+  CalendarManager *_calendarManager;
+}
 
 - (NSDictionary *)constantsToExport
 {
   return @{ @"firstDayOfTheWeek": CalendarManager.firstDayOfTheWeek };
+}
+
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    _calendarManager = [[CalendarManager alloc] init];
+  }
+  return self;
 }
 
 RCT_EXPORT_MODULE(CalendarManager);
@@ -26,7 +36,7 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
   NSString *location = [RCTConvert NSString:details[@"location"]];
   NSDate *time = [RCTConvert NSDate:details[@"time"]];
   
-  RCTLogInfo(@"Pretending to create an event %@ at %@ at %@", name, location, time);
+  [_calendarManager addEventWithName:name location:location time:time];
 }
 
 RCT_REMAP_METHOD(findEvents,
