@@ -12,7 +12,6 @@ import {
   Text,
   View
 } from 'react-native';
-import MapView from './MapView';
 import {NativeModules} from 'react-native';
 var CalendarManager = NativeModules.CalendarManager;
 
@@ -40,10 +39,6 @@ export default class App extends Component {
     }
   }
 
-  onRegionChange(event) {
-    console.log(event);
-  }
-
   render() {
     const region = {
       latitude: 37.48,
@@ -53,17 +48,11 @@ export default class App extends Component {
     };
     return (
       <View style={{ flex: 1 }}>
-        <Text style={{ height: 50, paddingTop: 20 }}>Map:</Text>
+        <Text style={{ height: 50, paddingTop: 20 }}>Native Integration</Text>
         <Button
           title="Try the bridge!"
           style={{ height: 50 }}
           onPress={() => this.tryTheBridge()}
-        />
-        <MapView
-          style={{ flex: 1 }}
-          region={region}
-          zoomEnabled={false}
-          onRegionChange={e => this.onRegionChange(e)}
         />
       </View>
     );
