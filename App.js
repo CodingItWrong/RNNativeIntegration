@@ -26,7 +26,7 @@ export default class App extends Component {
   async tryTheBridge() {
     console.log(CalendarManager.firstDayOfTheWeek);
 
-    CalendarManager.addEvent("Valentine's Day Dinner", {
+    CalendarManager.addEvent("Surprise Party", {
       location: 'Secret Location',
       time: Date.now(),
     });
