@@ -38,14 +38,17 @@ class CalendarManager: NSObject {
     Logger.info("Pretending to create an event \(name) at \(String(describing: location)) at \(String(describing: time))");
   }
   
-  func findEvents() throws -> [String] {
+  func findEvents(callback: (Result) -> Void) {
+    // pretend something asynchronous happens
+    
     let events: [String]? = ["foo", "bar", "baz"]
     // let events: [String]? = nil
     
     if let events = events {
-      return events
+      callback(SuccessResult(value: events))
     } else {
-      throw CalendarError.noEvents
+      let error = CalendarError.noEvents
+      callback(FailureResult(error: error))
     }
   }
 }
